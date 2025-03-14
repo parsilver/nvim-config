@@ -1,100 +1,167 @@
-# Neovim Configuration
+# Enhanced Neovim Configuration
 
-A modern, feature-rich Neovim configuration with LSP support, autocompletion, and a beautiful UI.
+A beautiful and feature-rich Neovim configuration with excellent UX and modern features.
+
+![Neovim Screenshot](https://i.imgur.com/XYfbRVv.png)
 
 ## Features
 
-- 🚀 Fast startup with lazy loading plugins
-- 🎨 Beautiful UI with Tokyo Night theme
-- 🔍 Fuzzy finding with Telescope
-- 🌳 File explorer with nvim-tree
-- 📝 LSP support for code intelligence
-- ✨ Autocompletion with nvim-cmp
-- 🔧 Formatting and linting
-- 📦 Git integration with gitsigns
-- 🔤 Syntax highlighting with Treesitter
-- 🔑 Which-key for keybinding help
+- 🎨 **Beautiful UI**: Modern and clean interface with carefully selected themes and UI components
+- ⚡ **Fast and Efficient**: Lazy-loaded plugins for quick startup times
+- 🧠 **Smart Code Editing**: Intelligent code completion, navigation, and editing features
+- 🔍 **Powerful Search**: Fuzzy finding for files, text, and more
+- 🌳 **File Navigation**: Intuitive file explorer and buffer management
+- 🖥️ **Terminal Integration**: Seamless terminal experience within Neovim
+- 📦 **Plugin Management**: Easy plugin management with lazy.nvim
+- 🔧 **Customizable**: Well-organized configuration files for easy customization
 
-## Key Mappings
+## UI Enhancements
 
-The leader key is set to `<Space>`.
+- **Dashboard**: Beautiful start screen with quick actions
+- **Statusline**: Informative and customizable status line
+- **Bufferline**: Tab/buffer line with close buttons and indicators
+- **Indent Guides**: Visual guides for code indentation
+- **Notifications**: Modern notification system
+- **Command Line**: Enhanced command line interface
+- **Scrollbar**: Visual scrollbar with diagnostic indicators
+- **Colorschemes**: Multiple beautiful themes with easy switching
 
-For a complete list of all keymaps, including information about intentionally overlapping keymaps, see [KEYMAPS.md](./KEYMAPS.md).
+## Navigation Features
+
+- **Smart Window Management**: Intelligent window navigation and resizing
+- **Window Animations**: Smooth window animations for better visual feedback
+- **Terminal Integration**: Floating and split terminal windows
+- **Session Management**: Save and restore your workspace
+- **Tab Management**: Better tab management with scope.nvim
+
+## Coding Features
+
+- **Treesitter**: Advanced syntax highlighting and code navigation
+- **LSP**: Language Server Protocol for intelligent code features
+- **Auto Pairs**: Automatically close brackets, quotes, etc.
+- **Surround**: Easily surround text with brackets, quotes, etc.
+- **Comments**: Smart commenting with context awareness
+- **Git Integration**: Git signs and actions in the editor
+- **Code Folding**: Better code folding with preview
+- **Todo Comments**: Highlight and search for TODO comments
+- **Colorizer**: Highlight color codes with their actual colors
+
+## Keymaps
 
 ### General
 
-- `<leader>w` - Save file
-- `<leader>q` - Quit
-- `<leader>wq` - Save and quit
-- `jk` - Exit insert mode
+- `<Space>` - Leader key
+- `<leader>e` - Toggle file explorer
+- `<leader>ff` - Find files
+- `<leader>fg` - Live grep
+- `<leader>fb` - Find buffers
+- `<leader>fh` - Find help tags
+- `<leader>cs` - Switch colorscheme
 
-### Navigation
+### Windows and Tabs
 
 - `<C-h/j/k/l>` - Navigate between windows
-- `<leader>sv` - Split window vertically
-- `<leader>sh` - Split window horizontally
-- `<leader>se` - Make splits equal size
-- `<leader>sx` - Close current split
+- `<A-h/j/k/l>` - Resize windows
+- `<leader>wm` - Maximize window
+- `<leader>we` - Equalize windows
+- `<leader>wp` - Pick a window
+- `<leader>1-9` - Go to buffer 1-9
 
-### File Explorer
+### Terminal
 
-- `<leader>e` - Toggle file explorer
-- `<leader>ef` - Find current file in explorer
+- `<C-\>` - Toggle floating terminal
+- `<leader>tt` - Toggle floating terminal
+- `<leader>th` - Toggle horizontal terminal
+- `<leader>tv` - Toggle vertical terminal
+- `<leader>tg` - Toggle Lazygit
 
-### Telescope (Fuzzy Finder)
+### Code Editing
 
-- `<leader>ff` - Find files
-- `<leader>fg` - Find text (grep)
-- `<leader>fb` - Find buffers
-- `<leader>fh` - Find help
-- `<leader>fr` - Find recent files
-
-### LSP
-
-- `gd` - Go to definition
-- `gD` - Go to declaration
-- `gr` - Find references
-- `K` - Show hover documentation
-- `<leader>lr` - Rename symbol
-- `<leader>la` - Code action
-- `<leader>lf` - Format code
-- `[d` / `]d` - Previous/next diagnostic
+- `gcc` - Comment line
+- `gc` - Comment with motion
+- `ys` - Add surrounding
+- `cs` - Change surrounding
+- `ds` - Delete surrounding
+- `zR` - Open all folds
+- `zM` - Close all folds
+- `zp` - Peek folded code
 
 ### Git
 
+- `]c` / `[c` - Next/previous git hunk
 - `<leader>hs` - Stage hunk
 - `<leader>hr` - Reset hunk
 - `<leader>hb` - Blame line
-- `<leader>hd` - Diff this
-- `]c` / `[c` - Next/previous hunk
+- `<leader>hp` - Preview hunk
+
+### Focus Mode
+
+- `<leader>zz` - Toggle Zen mode
+- `<leader>tw` - Toggle Twilight (dim inactive code)
 
 ## Installation
 
-This configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management, which will automatically install all plugins on first startup.
+1. Backup your existing Neovim configuration:
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.bak
+   ```
 
-### Prerequisites
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/parsilver/nvim-config.git ~/.config/nvim
+   ```
+
+3. Start Neovim:
+   ```bash
+   nvim
+   ```
+
+4. Wait for plugins to install automatically.
+
+## Requirements
 
 - Neovim >= 0.9.0
 - Git
 - A [Nerd Font](https://www.nerdfonts.com/) for icons
-- Node.js (for LSP servers)
-- ripgrep (for Telescope grep)
+- (Optional) [ripgrep](https://github.com/BurntSushi/ripgrep) for better search
+- (Optional) [fd](https://github.com/sharkdp/fd) for faster file finding
+- (Optional) [lazygit](https://github.com/jesseduffield/lazygit) for Git integration
 
-### First Run
+## Structure
 
-On first run, lazy.nvim will install all plugins and language servers will be installed via Mason.
+```
+~/.config/nvim/
+├── init.lua                 # Main entry point
+├── lua/
+│   ├── core/                # Core configuration
+│   │   ├── options.lua      # Neovim options
+│   │   ├── keymaps.lua      # Key mappings
+│   │   ├── plugins.lua      # Plugin management
+│   │   └── colorscheme.lua  # Colorscheme settings
+│   └── plugins/             # Plugin configurations
+│       ├── ui-enhancements.lua  # UI plugins
+│       ├── navigation.lua       # Navigation plugins
+│       ├── coding.lua           # Coding plugins
+│       ├── colorscheme.lua      # Colorscheme plugins
+│       └── ...                  # Other plugin configs
+└── README.md                # Documentation
+```
 
 ## Customization
 
 - Edit `lua/core/options.lua` to change Neovim options
 - Edit `lua/core/keymaps.lua` to change key mappings
-- Edit `lua/core/colorscheme.lua` to change the colorscheme
-- Add new plugins in the `lua/plugins/` directory
+- Edit `lua/plugins/` files to configure or add plugins
 
-## Troubleshooting
+## Credits
 
-If you encounter any issues:
+This configuration is inspired by and borrows from:
 
-1. Run `:checkhealth` to diagnose problems
-2. Update plugins with `:Lazy update`
-3. Update LSP servers with `:Mason` 
+- [LazyVim](https://github.com/LazyVim/LazyVim)
+- [NvChad](https://github.com/NvChad/NvChad)
+- [LunarVim](https://github.com/LunarVim/LunarVim)
+- [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+
+## License
+
+MIT 
