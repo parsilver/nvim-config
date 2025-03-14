@@ -2,8 +2,6 @@
 
 A beautiful and feature-rich Neovim configuration with excellent UX and modern features.
 
-![Neovim Screenshot](https://i.imgur.com/XYfbRVv.png)
-
 ## Features
 
 - 🎨 **Beautiful UI**: Modern and clean interface with carefully selected themes and UI components
