@@ -50,8 +50,9 @@ return {
           "tailwindcss",
           "jsonls",
           "pyright",
-          "gopls",
+          -- "gopls", -- Commented out to prevent Mason from trying to install it
           "rust_analyzer",
+          "intelephense", -- PHP language server
         },
         -- Auto-install configured servers (with lspconfig)
         automatic_installation = true,
@@ -68,6 +69,8 @@ return {
           "isort",    -- Python import formatter
           "pylint",   -- Python linter
           "golangci-lint", -- Go linter
+          "php-cs-fixer", -- PHP formatter
+          "phpstan",      -- PHP static analyzer
         },
       })
       
@@ -128,7 +131,9 @@ return {
         tailwindcss = {},
         jsonls = {},
         pyright = {},
-        gopls = {},
+        gopls = {
+          cmd = { "gopls" }, -- Use the gopls binary from PATH
+        },
         rust_analyzer = {},
       }
       
@@ -138,6 +143,9 @@ return {
           lspconfig[server_name].setup(servers[server_name] or {})
         end,
       })
+      
+      -- Manually setup gopls since we're not using Mason for it
+      lspconfig.gopls.setup(servers.gopls)
     end,
   },
   

@@ -19,8 +19,8 @@ return {
         ignored_buftypes = { "NvimTree" },
         -- Default split direction
         default_amount = 3,
-        -- Wrap to opposite side when reaching edge
-        wrap_at_edge = true,
+        -- Behavior when cursor reaches edge of window
+        at_edge = "wrap", -- Options: 'wrap', 'split', 'stop'
         -- Cursor movement within wrapped lines
         move_cursor_same_row = false,
         -- Resize mode options

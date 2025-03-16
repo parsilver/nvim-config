@@ -253,6 +253,25 @@ return {
           r = { "Reset selection" },
         },
       },
+      
+      -- Add PHP and Laravel specific mappings
+      ["<leader>p"] = {
+        name = "PHP",
+        f = { "<cmd>lua require('conform').format({ bufnr = 0, lsp_fallback = true })<cr>", "Format PHP" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename Symbol" },
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Line Diagnostics" },
+      },
+      
+      ["<leader>l"] = {
+        name = "Laravel",
+        a = { "<cmd>Laravel artisan<cr>", "Artisan Commands" },
+        r = { "<cmd>Laravel routes<cr>", "Routes" },
+        m = { "<cmd>Laravel models<cr>", "Models" },
+        c = { "<cmd>Laravel commands<cr>", "Commands" },
+        v = { "<cmd>Laravel views<cr>", "Views" },
+        e = { "<cmd>edit .env<cr>", "Edit .env" },
+      },
     })
   end,
 } 

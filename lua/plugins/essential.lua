@@ -152,7 +152,8 @@ return {
         -- A list of parser names, or "all"
         ensure_installed = {
           "lua", "vim", "vimdoc", "javascript", "typescript", "tsx", "html", "css", 
-          "json", "yaml", "bash", "python", "go", "rust", "markdown", "markdown_inline"
+          "json", "yaml", "bash", "python", "go", "rust", "markdown", "markdown_inline",
+          "php", "phpdoc" -- Added PHP and PHPDoc parsers
         },
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
